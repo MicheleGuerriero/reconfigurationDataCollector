@@ -41,8 +41,8 @@ public class Main
 {
     public static void main( String[] args )
     {
-    	/*
-          NuroApplicationDC dc=new NuroApplicationDC();
+    	
+          DeployerDC dc=new DeployerDC();
 
           try {
                 EnvironmentReader config = EnvironmentReader.getInstance();
@@ -52,26 +52,6 @@ public class Main
                   // TODO Auto-generated catch block
                   e.printStackTrace();
             }
-            */
-    	
-    	BrooklynApi deployer=new BrooklynApi("http://127.0.0.1:8081/",
-                "", "");
-        
-        List<ApplicationSummary> apps = deployer.getApplicationApi().list(null);
-        EntityApi entities=deployer.getEntityApi();
-
-        System.out.println("PRINTING APPLICATIONS");
-        for(ApplicationSummary app: apps){
-        	
-        	System.out.println(app.getId());
-        	System.out.println(app.getStatus());
-        	List<EntitySummary> e=entities.list(app.getId());
-        	
-        	for(EntitySummary s: e){
-        		System.out.println(s.toString());
-        	}
-        }
-        
 
     }
 

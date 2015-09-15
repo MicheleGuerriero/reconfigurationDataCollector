@@ -110,7 +110,7 @@ public class DeployerDC implements Observer {
                                     	if(app.getId().equals(monitoredTargetType)){
                                         	dcAgent.send(new InternalComponent(monitoredTargetType,
                                                     monitoredTargetId), metric,
-                                                                app.getStatus());         
+                                                                app.getId()+"="+app.getStatus());         
                                     	}
                                     	
                            	
